@@ -1,0 +1,38 @@
+{
+  "name": "sendIt_task-force-challenge",
+  "version": "1.0.0",
+  "description": "A simple To-Do API challenge to show up skills",
+  "main": "index.js",
+  "repository": "https://github.com/SimonImanigirimpuhwe/sendIt_task-force-challenge.git",
+  "author": "SimonImanigirimpuhwe <softimag08@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "",
+    "start": "babel-node dist/index",
+    "start:dev": "nodemon --exec babel-node src/index ",
+    "build": "babel src --out-dir dist",
+    "migrate": "sequelize db:migrate",
+    "migrate:undo": "sequelize db:migrate:undo:all && yarn run migrate",
+    "seed": "sequelize db:seed:all"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.12.17",
+    "@babel/core": "^7.12.17",
+    "@babel/node": "^7.12.17",
+    "@babel/plugin-transform-runtime": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "@hapi/joi": "^17.1.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
