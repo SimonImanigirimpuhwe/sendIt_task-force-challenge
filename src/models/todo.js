@@ -5,9 +5,12 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Todo extends Model {
     /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
+     * Todo model
+     * @param {number} userId - Id of To-Do owner
+     * @param {string} title - Title of To-Do
+     * @param {string} description - Description of To-Do
+     * @param {string} priority - Priority of To-Do
+     * @returns {object} Todo model
      */
     static associate(models) {
       // define association here

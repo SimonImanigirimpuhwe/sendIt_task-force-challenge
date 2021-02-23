@@ -5,9 +5,12 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
+     * @description This is user model
+     * @param {object} models - User model
+     * @param {string} firstName 
+     * @param {string} lastName 
+     * @param {string} email 
+     * @param {string} password 
      */
     static associate(models) {
       // define association here

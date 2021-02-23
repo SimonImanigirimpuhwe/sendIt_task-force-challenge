@@ -3,6 +3,12 @@ import models from '../models';
 const { Todo } = models;
 
 export default {
+    /**
+     * @description This allow user to create new To-Do
+     * @param {object} req - Request object
+     * @param {object} res - Response object
+     * @returns {object} The response object
+     */
     addTodo: async (req, res) => {
         const { id } = req.user;
         const { title, description, priority } = req.body;
@@ -18,6 +24,13 @@ export default {
         });
         return res.status(201).json({ msg: 'New To-Do created', newTodo})
     },
+    
+    /**
+     * @description This allow user to get all his/her To-Do
+     * @param {object} req - Request object
+     * @param {object} res - Request response
+     * @returns {object} Response object
+     */
     getTodos: async (req, res) => {
         try {
             const { id } = req.user;
@@ -32,6 +45,13 @@ export default {
            return res.status(500).json({ msg: 'Internal server error'}) 
         }
     },
+
+    /**
+     * @description This allow user to get single To-Do
+     * @param {object} req - Request object
+     * @param {object} res - Response object
+     * @returns {object} Response object 
+     */
     getOneTodo: async (req, res) => {
         try {
             const { id } = req.params;
@@ -45,6 +65,13 @@ export default {
             return res.status(500).json({ msg: 'Internal server error'}) 
         }
     },
+
+    /**
+     * @description This allow user to update selected To-Do
+     * @param {object} req - Request object
+     * @param {object} res - Response object
+     * @returns {object} Response object
+     */
     updateTodo: async (req, res) => {
         try {
             const { id } = req.params;
@@ -58,6 +85,14 @@ export default {
             return res.status(500).json({ msg: 'Internal server error'}) 
         }
     },
+
+    /**
+     * @description This allow user to delete a specific To-Do
+     * @param {object} req - Request object
+     * @param {object} res - Response object
+     * @param {number} id -Id of To-Do
+     * @returns {object} Response object
+     */
     deleteTodo: async (req, res) => {
         try {
             const { id } = req.params;
