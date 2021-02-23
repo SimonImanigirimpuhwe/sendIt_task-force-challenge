@@ -4,7 +4,7 @@ orbs:
 jobs:
   run_tests:
     docker:
-      - image:  circleci/node:10
+      - image:  circleci/node:latest
       - image: circleci/postgres:latest
         environment:
           POSTGRES_USER: circleci
