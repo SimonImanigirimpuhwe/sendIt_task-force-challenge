@@ -6,6 +6,12 @@ import models from "../models";
 const { User } = models
 
 export default {
+    /**
+     * @description This allow user to signup
+     * @param {object} req - Request object
+     * @param {object} res - Response object
+     * @returns {object} Response object
+     */
     signup: async (req, res) => {
         try {          
             const { firstName, lastName, email, password } = req.body;
@@ -33,6 +39,13 @@ export default {
             return res.status(500).json({ msg: 'Internal server error'})
         }
     },
+    
+    /**
+     * @description This allow user to login
+     * @param {object} req - Request object
+     * @param {object} res - Response object
+     * @returns {object} Response object
+     */
     login: async (req, res) => {
         const { email, password } = req.body;
          const account = await User.findOne({ where: { email }});

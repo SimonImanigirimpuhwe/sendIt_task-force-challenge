@@ -1,5 +1,11 @@
 import Joi from '@hapi/joi';
 
+/**
+ * @description This validate req.body before signing up
+ * @param {object} req - Request object
+ * @param {object} res - Response object
+ * @param {next} next - Foward request to the next middleware function
+ */
 export const signupValidation = (req, res, next) => {
     const schema = Joi.object({
         firstName: Joi.string().required().messages({
@@ -28,6 +34,12 @@ export const signupValidation = (req, res, next) => {
     return next();
 };
 
+/**
+ * @description This validate req.body before login
+ * @param {object} req - Request object
+ * @param {object} res - Response object
+ * @param {next} next - Foward request to the next middleware function
+ */
 export const loginValidation = (req, res, next) => {
     const schema = Joi.object({
         email: Joi.string().email().lowercase().required().messages({
@@ -48,6 +60,12 @@ export const loginValidation = (req, res, next) => {
     return next();
 };
 
+/**
+ * @description This validate req body before creating new To-Do
+ * @param {object} req - Request object
+ * @param {object} res - Response object
+ * @param {next} next - Foward request to the next middleware function
+ */
 export const createTodoValidation = (req, res, next) => {
     const schema = Joi.object({
         title: Joi.string().required().messages({'string.empty': 'Title is required!'}),
@@ -62,6 +80,12 @@ export const createTodoValidation = (req, res, next) => {
     return next();
 };
 
+/**
+ * @description This validate request body while updating To-Do
+ * @param {object} req - Request object
+ * @param {object} res - Resonse object
+ * @param {func} next - Foward request to the next middleware function
+ */
 export const updateTodoValidation = (req, res, next) => {
     const schema = Joi.object({
         title: Joi.string().messages({'string.empty': 'Title cannot be empty!'}),

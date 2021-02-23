@@ -16,7 +16,8 @@
     "build": "babel src --out-dir dist",
     "migrate": "sequelize db:migrate",
     "migrate:undo": "sequelize db:migrate:undo:all && yarn run migrate",
-    "seed": "sequelize db:seed:all"
+    "seed": "sequelize db:seed:all",
+    "doc": "jsdoc -c jsdoc.json"
   },
   "dependencies": {
     "@babel/cli": "^7.12.17",
@@ -43,6 +44,7 @@
     "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
+    "jsdoc": "^3.6.6",
     "nodemon": "^2.0.7"
   }
 }

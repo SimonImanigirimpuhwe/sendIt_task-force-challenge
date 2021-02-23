@@ -5,6 +5,12 @@ config();
 
 const secretKey = process.env.SECRET_KEY;
 
+/**
+ * @description This check authentication
+ * @param {object} req - Request object
+ * @param {object} res - Response object
+ * @param {func} next - Foward request to the next middleware function
+ */
 const auth = (req, res, next) => {
     try {
     const token = req.headers.authorization.split(' ')[1];
