@@ -12,7 +12,7 @@
     "coverage": "nyc --reporter=lcov --reporter=text yarn test",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "start": "babel-node dist/index",
-    "start:dev": "nodemon --exec babel-node src/index ",
+    "dev": "nodemon --exec babel-node src/index ",
     "build": "babel src --out-dir dist",
     "migrate": "sequelize db:migrate",
     "migrate:undo": "sequelize db:migrate:undo:all && yarn run migrate",
@@ -41,7 +41,9 @@
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.5.0",
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^6.2.0",
+    "swagger-jsdoc": "^6.0.0-rc.5",
+    "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
     "jsdoc": "^3.6.6",
