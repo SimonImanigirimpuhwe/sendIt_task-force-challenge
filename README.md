@@ -32,6 +32,11 @@
 - Run **`yarn run container:create`** to create the image
 - Run **`yarn run image-start`** or **`docker-compose up`**  to start the image
 
+## Usage
+ #### Links
+  - [https://sendit-todo-challenge.herokuapp.com](https://sendit-todo-challenge.herokuapp.com)
+  - [https://sendit-todo-challenge.herokuapp.com/todo-docs](https://sendit-todo-challenge.herokuapp.com/todo-docs)
+
 ## Contact
 
 - Simon Imanigirimpuhwe
