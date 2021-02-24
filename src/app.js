@@ -16,6 +16,10 @@ app.use(morgan('dev'));
 // setup swagger
 app.use('/todo-docs', serve, setup(swaggerDocs(swaggerOptions)))
 
+// welcome route
+app.get('/', (req, res) => {
+  return res.status(200).json({ msg: 'Welcome to To-Do API'})
+})
 //routes
 app.use('/users', authRoutes);
 app.use('/todos', todoRoutes)
