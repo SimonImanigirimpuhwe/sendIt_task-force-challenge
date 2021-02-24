@@ -1,0 +1,43 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+  todo-api:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /app/node_modules
+      - .:/app
+
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+    env_file: .env
+    environment:
+      NODE_ENV: development
+      POSTGRES_DB: tiles
+      DB_HOSTNAME: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      DV_DATABASE_URL: postgres://postgres@postgres/todo
+
+  postgres:
+    image: postgres:alpine
+    restart: always
+    ports: 
+      - "5432:5432"
+    environment:
+      NODE_ENV: development
+      POSTGRES_DB: tiles
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      DB_HOSTNAME: postgres
+      DV_DATABASE_URL: postgres://postgres@127.0.0.1:5432/todo
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:
