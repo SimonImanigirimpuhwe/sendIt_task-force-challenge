@@ -34,8 +34,8 @@
 
 ## Usage
  #### Links
-  - [https://sendit-todo-challenge.herokuapp.com](https://sendit-todo-challenge.herokuapp.com)
-  - [https://sendit-todo-challenge.herokuapp.com/todo-docs](https://sendit-todo-challenge.herokuapp.com/todo-docs)
+  - Server Link: [https://sendit-todo-challenge.herokuapp.com](https://sendit-todo-challenge.herokuapp.com)
+  - Swagger Documention:  [https://sendit-todo-challenge.herokuapp.com/todo-docs](https://sendit-todo-challenge.herokuapp.com/todo-docs)
 
 ## Contact
 
