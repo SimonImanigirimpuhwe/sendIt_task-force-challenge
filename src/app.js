@@ -27,7 +27,7 @@ app.use('/todos', todoRoutes)
 //connect to database
 db.sequelize
   .authenticate()
-  .then((res) => console.log('Databse connected!'))
-  .catch((err) => console.log('FATAL Database connection failed', err))
+  .then(() => console.log('Databse connected!'))
+  .catch((err) => console.log('FATAL Database connection failed'))
 
 export default app;

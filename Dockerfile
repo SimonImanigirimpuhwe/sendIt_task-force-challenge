@@ -14,6 +14,7 @@ RUN yarn install && yarn cache clean --force
 # Bundle app source
 COPY . .
 
+# RUN git clone https://github.com/vishnubob/wait-for-it.git
 # Binding to PORT 5000
 EXPOSE 5000
 
