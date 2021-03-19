@@ -20,7 +20,7 @@
     "doc": "jsdoc -c jsdoc.json",
     "build-image": "docker build -t todo_api/challenge .",
     "container:create": "docker run -p 5000:5000 todo_api/challenge",
-    "image-start": "docker-compose up"
+    "image-start": "docker-compose up "
   },
   "dependencies": {
     "@babel/cli": "^7.12.17",
